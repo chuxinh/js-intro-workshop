@@ -118,7 +118,7 @@
 // TODO: Now it's your turn — get the h1 tag from the page and store it into a
 // variable named ourTitle.
 // console.log it and see what you get!
-
+const ourTitle = document.querySelector("h1");
 
 
 
@@ -144,7 +144,7 @@
 
 
 // TODO: Get all <li> elements from the page in a variable named mediaLinks.
-
+const mediaLinks = document.querySelectorAll("li");
 
 
 
@@ -156,6 +156,9 @@
 // TODO: Do you remember loops from level 2? Using this knowledge, iterate
 // through each mediaLinks item and console.log it.
 
+for (let i = 0; i < mediaLinks.length; i++) {
+  console.log(mediaLinks[i]);
+}
 
 
 
@@ -176,7 +179,7 @@
 
 
 // TODO: Get the content of 'h1' element and console.log it.
-
+console.log(ourTitle.textContent);
 
 
 
@@ -202,6 +205,11 @@
 
 // TODO: Make up a new title! Change the content of our 'h1' to anything you
 // like.
+ourTitle.textContent = 'Next place to visit!';
+console.log(ourTitle.textContent);
+
+const oursubTitle = document.querySelector("h2");
+oursubTitle.textContent = "Singapore, San Francisco, Tokyo 🙋";
 
 
 
@@ -222,8 +230,8 @@
 
 // TODO: Update the value of the 'src' attribute of our img tag to
 // "img/kittens.jpeg"
-
-
+// const ourImg = document.querySelector("img");
+// ourImg.src = "img/singapore.jpg";
 
 
 
@@ -246,7 +254,7 @@
 
 
 // TODO: Get any element on the page and change some styles for it.
-
+// ourImg.style.maxWidth = '100rem';
 
 
 
@@ -278,6 +286,57 @@
 // put it into a header.
 //
 // P.S. You also can give styles to the new node that you create.
+
+/*
+
+Self exercise: Try adding a rotating banner at the bottom of the page
+*/
+
+var rotatingSeconds = 2; //number often in seconds to rotate
+var currentCnt = 0; //start the counter at 0
+
+// place your images, text, etc in the array elements here
+var itemsLink = new Array();
+
+
+// itemsLink.push("img/agathe-marty-651082-unsplash.jpg");
+
+// itemsLink.push("img/braden-collum-1288400-unsplash.jpg");
+// itemsLink.push("img/chen-hu-656089-unsplash.jpg");
+itemsLink.push("img/singapore.jpg");
+itemsLink.push("img/alex-knight-760570-unsplash.jpg");
+// itemsLink.push("img/hardik-pandya-535344-unsplash.jpg");
+// itemsLink.push("img/benjamin-hung-340383-unsplash.jpg");
+// itemsLink.push("img/jezael-melgoza-1127048-unsplash.jpg");
+// itemsLink.push("img/louie-martinez-482218-unsplash.jpg");
+itemsLink.push("img/joseph-barrientos-49318-unsplash.jpg");
+itemsLink.push("img/logo_muses_color.svg");
+
+
+function rotater() {
+    console.log("in rotater");
+    document.querySelector(".rotate").innerHTML = "<img src='" + itemsLink[currentCnt] + "' height='400' border='0'/>";
+    console.log(document.querySelector(".rotate").innerHTML);
+    currentCnt = (currentCnt == itemsLink.length - 1) ? 0 : currentCnt + 1;
+    setTimeout("rotater()", rotatingSeconds * 1000);
+}
+
+function rotater1() {
+    if (document.layers) {
+        document.rotatorLayer.document.write("<img src='" + itemsLink[currentCnt] + ">");
+        document.rotatorLayer.document.close();
+        alert("In layers");
+    }
+    if (document.all) {
+        alert("Complete loading");
+        rotator.innerHTML = "<img src='" + itemsLink[currentCnt] + ">";
+    }
+
+    currentCnt = (currentCnt == itemsLink.length - 1) ? 0 : currentCnt + 1; //increment or reset
+    setTimeout("rotater()", rotatingSeconds * 1000);
+}
+window.onload = rotater1;
+
 
 
 

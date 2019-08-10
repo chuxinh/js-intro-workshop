@@ -38,9 +38,7 @@
 
 
 // TODO: Now try to create an alert with any phrase you like.
-
-
-
+//alert('Hi!');
 
 
 // TODO: After the alert works for you, comment it out (put '//' on the line where
@@ -64,10 +62,10 @@
     let variableName;
 
     So, we created a variable named variableName, but it has no information or
-    value inside. It is undefined. 
+    value inside. It is undefined.
 
     console.log("variableName is", variableName);
-    
+
     To give our variable a value (initialize it) use the '=' sign:
 
     variableName = 'Hello world!';
@@ -95,7 +93,8 @@
 */
 
 // TODO: Now create two undefined variables named numberOne and numberTwo.
-
+let numberOne
+let numberTwo
 
 
 
@@ -112,7 +111,9 @@
 
 // TODO: Create 2 variables, 1 with your name and the 2nd with your age and display
 // them with an alert pop-up box.
-
+//let name = "Chuxin"
+//let age = 27
+//alert(name, age);
 
 /*
     Constants
@@ -135,6 +136,8 @@
 */
 
 // TODO: Create a constant, and display it an alert pop-up box.
+const number = 1;
+//alert(number);
 
 // TODO: Try to assign a new value to your constant to see what happens.
 
@@ -169,9 +172,10 @@
 // * And finally 3rd variable named multipleOfNumbers that will be equal to
 // 1st variable multiplied by the 2nd variable. And in the end display the
 // value of multipleOfNumbers.
-
-
-
+let ten = 10;
+let three = 3;
+let multipleOfNumbers = ten * three;
+//alert(multipleOfNumbers);
 
 
 /*
@@ -208,7 +212,9 @@
 // Step 2 - This function should return us a sum of num1 and num2.
 // Step 3 - Call the function passing numbers 2 and 3 as arguments.
 // - To see the result you can console.log it.
-
+function add(num1, num2) {
+  return num1 + num2;
+};
 
 
 
@@ -220,7 +226,9 @@
 
 // PS: Do you know that instead of numbers you can create variables that store
 // those numbers and pass them as an arguments to your function? Try it out!
-
+function subtract(num1, num2) {
+  return num1 - num2;
+};
 
 
 
@@ -293,26 +301,7 @@
 // else the subtract function with any 2 numbers.
 //
 // Don't forget to console.log it to see the result.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let operator = ".";
 
 /*
     if - else if - else
@@ -338,6 +327,23 @@
 // that let's extend our 'if else' check that we already created by checking if
 // it is equal to '/' - call 'divide' function, if it is '*' call multiply
 // function, else console.log - "Sorry, we don't know this operator".
+function divide (num1, num2) {
+  return num1 / num2;
+}
+function multiply (num1, num2){
+  return num1 * num2;
+}
+if (operator === "+") {
+  console.log(add(ten, three));
+} else if (operator === "-") {
+  console.log(subtract(ten,three));
+} else if (operator === "*") {
+  console.log(multiply(ten, three))
+} else if (operator === "/"){
+  console.log(divide(ten,three))
+} else{
+  console.log("Sorry")
+}
 
 
 
@@ -348,17 +354,18 @@
 
 
 
-/* 
+
+/*
     Boolean Operators
     =================
-    Putting an exclamation (!) before a Boolean variable gives 
-    the opposite value. The ! is called a "not" operator when 
+    Putting an exclamation (!) before a Boolean variable gives
+    the opposite value. The ! is called a "not" operator when
     used this way.
 
     // the result of a comparison is a Boolean value, so we can
     // save it to a variable
     const bool = (1 < 2);
-    console.log(bool); 
+    console.log(bool);
     console.log(!bool); // "not true", therefore false
     console.log(bool); // the original value isn't affected
 */

@@ -41,7 +41,7 @@
 
 // TODO: Create your own array, named favouriteFood, and write in a couple of
 // things you like.
-
+let favouriteFood = ["umeshu", "avocadotoast", "sukiyaki", "chirashidon", "sashimi"];
 
 
 
@@ -114,7 +114,7 @@
 // else.
 // console.log the whole array to check.
 // Don't forget, index positions start from 0!
-
+favouriteFood[0] = "removed";
 
 
 
@@ -138,7 +138,7 @@
 
 // TODO: Let's extend your list of favouriteFood and add one more value to it.
 // console.log list your favouriteFood and check it.
-
+favouriteFood.push("🍟");
 
 
 
@@ -164,7 +164,7 @@
 
 // TODO: Repeat the previous exercises with your arrays defined as constants,
 // to see what happens.
-
+const favouriteCity = ["🏝","🌉","🗾"];
 
 
 
@@ -218,7 +218,12 @@
 
 // TODO: Using a 'while loop', tell your computer to log the numbers from
 // ten to one.
-
+//let number = 10;
+//
+// while (number > 0) {
+//   console.log(number);
+//   number = number - 1;
+// }
 
 
 
@@ -270,7 +275,9 @@
 */
 
 // TODO: Try it out with your favouriteFood array.
-
+for (let i = 0; i < favouriteCity.length; i++) {
+  console.log("next time go visit " + favouriteCity[i]);
+}
 
 
 
@@ -318,7 +325,17 @@
 // 16 % 4 = 0 — in 16 we have 4*4
 // 19 % 4 = 3 — in 19 we have 4*4 + 3 etc
 
-
+for (let i = 1; i <= 50; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log(i + " FizzBuzz")
+  } else if (i % 3 === 0) {
+    console.log(i + " Fizz");
+  } else if (i % 5 === 0) {
+    console.log(i + " Buzz");
+  } else {
+    console.log(i);
+  }
+}
 
 
 
